@@ -6,18 +6,39 @@
 //     const secondPage = document.getElementById('second-page');
 //     secondPage.classList.remove('hidden')
 // }
+function addKeyboardPress(event) {
+    const keyElementPressed = event.key;
 
-function playGame(){
-    const alphabet = getAlphabet();
-    const textShow = document.getElementById("text-display");
-    textShow.innerText = alphabet;
-    // console.log(getAlphabet())
+    const currentAlphabet = document.getElementById("text-display");
+    const alphabets = currentAlphabet.innerText;
 
-    setBackgroundColor(alphabet)
+
+    if (keyElementPressed === alphabets.toLocaleLowerCase()) {
+        console.log("matched")
+        playGame();
+        removeBackgroundColor(keyElementPressed);
+    }
+    else {
+        console.log('not matched')
+    }
 
 }
 
-function startGame(){
+// get keyboard input
+document.addEventListener('keyup', addKeyboardPress)
+
+// create random alphabets
+function playGame() {
+    const alphabet = getAlphabet();
+    const currentAlphabet = document.getElementById("text-display");
+    currentAlphabet.innerText = alphabet;
+
+    setBackgroundColor(alphabet);
+
+}
+
+// Enter the game
+function startGame() {
     hidePagesById('first-page');
     showPagesById('second-page');
 
