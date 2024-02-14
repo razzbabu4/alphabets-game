@@ -13,7 +13,7 @@
 <body class="font-poppins">
     <main class="bg-[#1E1E1E] bg-[url('images/background.png')] bg-no-repeat bg-center min-h-screen">
         <!-- first page -->
-        <section id="first-page" class="">
+        <section id="first-page">
             <div class="flex flex-col justify-center items-center min-h-screen gap-6">
                 <h1 class="text-9xl text-white font-anton text-center">ALPHABET CLASH</h1>
                 <p class="text-white text-2xl font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
@@ -66,7 +66,7 @@
                         <kbd id="b" class="kbd">b</kbd>
                         <kbd id="n" class="kbd">n</kbd>
                         <kbd id="m" class="kbd">m</kbd>
-                        <kbd id="/" class="kbd">/</kbd>
+                        <!-- <kbd id="/" class="kbd">/</kbd> -->
                     </div>
                 </div>
                 <!-- button -->
@@ -74,12 +74,12 @@
                     <button class="btn border-none bg-[#894189] text-white ">
                         Life
                         <img src="images/hert.svg" alt="">
-                        <span id="current-life"></span>
+                        <span id="current-life">5</span>
                     </button>
                     <button class="btn border-none bg-[#894189] text-white ">
                         Score
                         <img src="images/monetization.svg" alt="">
-                        <span id="current-score"></span>
+                        <span id="current-score">0</span>
                     </button>
 
                 </div>
@@ -87,10 +87,11 @@
         </section>
 
         <!-- Third page -->
-        <section class="hidden flex flex-col justify-center items-center min-h-screen">
+        <section id="third-page" class="hidden flex flex-col justify-center items-center min-h-screen">
             <div class="bg-[#9b71f6] flex flex-col justify-center items-center p-8 gap-6 rounded-xl">
-                <h1 class="text-5xl font-bold text-white">Score: <span>15</span></h1>
-                <button class="btn rounded-md">Play Again</button>
+                <button class="btn bg-red-600 px-10 text-white border-none">GAME OVER!!!</button>
+                <h1 class="text-5xl font-bold text-white">Score: <span id="last-score">15</span></h1>
+                <button onclick="startGame()" class="btn rounded-md">Play Again</button>
                 <p class="text-white font-medium">Practice will make you Pro</p>
             </div>
         </section>
