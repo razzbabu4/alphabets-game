@@ -11,19 +11,18 @@ function addKeyboardPress(event) {
     const keyElementPressed = event.key;
 
     // exit game with 'Esc' button
-    if(keyElementPressed === 'Escape'){
+    if (keyElementPressed === 'Escape') {
         gameOver();
     }
 
     const currentAlphabet = document.getElementById("text-display");
     const alphabets = currentAlphabet.innerText;
+    const finalAlphabet = alphabets.toLowerCase();
 
 
-    if (keyElementPressed === alphabets.toLocaleLowerCase()) {
+    if (keyElementPressed === finalAlphabet) {
         // console.log("matched")
-        playGame();
-        removeBackgroundColor(keyElementPressed);
-
+       
         // const currentScoreElement = document.getElementById('current-score');
         // const currentScoreText = currentScoreElement.innerText;
         // const currentScore = parseInt(currentScoreText);
@@ -35,6 +34,9 @@ function addKeyboardPress(event) {
         const updateScore = currentScore + 1;
 
         setTextValueById('current-score', updateScore)
+
+        playGame();
+        removeBackgroundColor(finalAlphabet);
 
     }
     else {

@@ -9,7 +9,7 @@ function showPagesById(elementId) {
 }
 
 function getAlphabet() {
-    const alphabets = "abcdefghijklmnopqrstwxyz"
+    const alphabets = "abcdefghijklmnopqrstuvwxyz"
     const arrayAlphabet = alphabets.split(''); // It's now like an array
     const index = Math.round(Math.random() * 25);
     const alphabet = arrayAlphabet[index];
